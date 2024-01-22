@@ -1,0 +1,26 @@
+services:
+  postgre:
+    image: postgres:13.13
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: pg123
+      POSTGRES_USER: root
+      POSTGRES_DB: kube-news
+  kubenews:
+    image: mauroimamura/kube-news:v1
+    depends_on:
+      - postgre
+    build:
+      context: ./src
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      DB_DATABASE: kube-news
+      DB_USERNAME: root
+      DB_PASSWORD: pg123
+      DB_HOST: postgre
+networks:
+  kubenews_net:
+    driver: bridge
