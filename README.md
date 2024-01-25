@@ -1,15 +1,22 @@
-# Projeto kube-news
+# Kube-News 
+(by fabricioveronez)
 
-### Objetivo
-O projeto Kube-news é uma aplicação escrita em NodeJS e tem como objetivo ser uma aplicação de exemplo pra trabalhar com o uso de containers.
+<p align="end">January 2024</p>
 
-### Configuração
-Pra configurar a aplicação, é preciso ter um banco de dados Postgre e pra definir o acesso ao banco, configure as variáveis de ambiente abaixo:
+A web application for publishing news. This project was forked from the repository <a href="https://github.com/KubeDev/kube-news">kube-news</a> during the Docker and Kubernetes Immersion event. In this event, features related to Docker containers for this app and its database were developed and used to run it locally without installing any dependencies in the local environment.
 
-DB_DATABASE => Nome do banco de dados que vai ser usado.
+The contributions for the original project are in Dockerfile and Compose yaml for creating containers that handle database and app execution.
 
-DB_USERNAME => Usuário do banco de dados.
 
-DB_PASSWORD => Senha do usuário do banco de dados.
+<img src="https://github.com/MauroImamura/images/blob/main/Kubenews_page.jpg"></img>
 
-DB_HOST => Endereço do banco de dados.
+### Setup
+It's necessary to create a Postgre database and set the connection between app and db using the following environment variables:
+
+DB_DATABASE => database name.
+
+DB_USERNAME => database user.
+
+DB_PASSWORD => database password.
+
+DB_HOST => database address.
